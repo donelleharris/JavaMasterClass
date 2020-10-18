@@ -1,29 +1,41 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println(getDurationString(65, 45));
-        System.out.println(getDurationString(3945));
+        printDayOfTheWeek(0);
+        printDayOfTheWeek(1);
+        printDayOfTheWeek(2);
+        printDayOfTheWeek(3);
+        printDayOfTheWeek(4);
+        printDayOfTheWeek(5);
+        printDayOfTheWeek(6);
+        printDayOfTheWeek(7);
     }
 
-    public static String getDurationString(long minutes, long seconds){
-        if (minutes < 0 || seconds < 0 || seconds > 59){
-            return "Invalid Value";
-        } else {
-            long hours = minutes / 60;
-            minutes = minutes % 60 + seconds / 60;
-            seconds = seconds % 60;
-
-            return hours + "h " + minutes + "m " + seconds + "s";
+    public static void printDayOfTheWeek(int day) {
+        switch (day){
+            case 0:
+                System.out.println("Sunday");
+                break;
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            case 6:
+                System.out.println("Saturday");
+                break;
+            default:
+                System.out.println("Invalid Day");
         }
     }
 
-
-    public static String getDurationString(long seconds){
-        if (seconds < 0){
-            return "Invalid Value";
-        } else {
-            long minutes = seconds / 60;
-            seconds = seconds % 60;
-            return getDurationString(minutes, seconds);
-        }
-    }
 }
