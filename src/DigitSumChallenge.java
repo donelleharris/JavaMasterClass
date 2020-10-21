@@ -31,6 +31,5 @@ public class DigitSumChallenge {
 //            sum += Integer.parseInt(String.valueOf(c));
 //        }
 //        return sum;
-//  }
 
 }

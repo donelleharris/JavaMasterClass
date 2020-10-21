@@ -2,18 +2,24 @@ public class NumberPalindrome {
     public static void main(String[] args) {
         System.out.println(isPalindrome(131));
         System.out.println(isPalindrome(123));
+        System.out.println(isPalindrome(-3113));
     }
-
+/*Write a method called isPalindrome with one int parameter called number.
+*
+* The method needs to return a boolean. It should return true if the number is
+* a palindrome number otherwise it should return false.
+*/
     public static boolean isPalindrome(int number){
-        if (number > 0) {
-            int reverse = 0;
-            while (number <= 0) {
-                int lastDigit = number % 10;
-                reverse *= 10;
-                reverse += lastDigit;
-                number /= 10;
-            }
+        int reverse = Math.abs(number);
+        number = Math.abs(number);
+        int r, sum = 0;
+        while (number > 0){
+            r = number%10;
+            sum = (sum * 10) + r;
+            number /=10;
         }
-        return false;
+        if (reverse == sum){
+            return true;
+        } else return false;
     }
 }
